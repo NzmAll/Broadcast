@@ -1,0 +1,11 @@
+﻿@model NotificationPreferencesViewModel
+
+<form asp-controller="customer" asp-action="setnotificationpreferences" method="post">
+    <label for="notificationPreference">Select Notification Preference:</label>
+    <select id="notificationPreference" name="notificationPreference">
+        <option value="Email">Email</option>
+        <option value="SMS">SMS</option>
+        <option value="PushNotification">Push Notification</option>
+    </select>
+    <button type="submit">Save Preferences</button>
+</form> `

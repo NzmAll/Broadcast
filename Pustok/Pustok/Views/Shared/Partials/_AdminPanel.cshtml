@@ -1,0 +1,21 @@
+﻿@using Microsoft.EntityFrameworkCore;
+@using Pustok.ViewModels
+@using Pustok.Database
+@model AdminNotificationViewModel
+
+<form asp-controller="Admin" asp-action="SendCustomNotification" method="post">
+    <div class="form-group">
+        <label for="RecipientIds">Select Recipients:</label>
+        <select multiple class="form-control" id="RecipientIds" name="RecipientIds" asp-for="RecipientIds">
+            @foreach (var user in Model.RecipientIds)
+            {
+                <option value="@user.">@user.</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="Message">Message:</label>
+        <textarea class="form-control" id="Message" name="Message" rows="4" asp-for="Message"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send Notification</button>
+</form>
